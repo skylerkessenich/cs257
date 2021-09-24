@@ -22,19 +22,26 @@ ii. For every book i in our data set, we will access Bi[0] aka the title of the 
 
 
 2. Given a search string S, print a list of authors whose names contain S (case-insensitive). For each such author, print a list of the author's books. Authors should be printed in alphabetical order by surname, breaking ties by using given name (e.g. Ann Brontë comes before Charlotte Brontë).
-Usage: This CLI will allow a user to search to see what books a specffic author has written. Given an authors name it will print out that name followed by every bookn they have written. 
+Usage: This CLI will allow a user to search to see what books a specffic author has written. Given an authors name it will print out that name followed by every book they have written. 
 
 Syntax: python3 books.py getAuthors(books, author)
--here books is the dataset of books and author is the string S containing the potential author name
+-here books is the dataset of books and author is the string S containing the potential author name. 
 
 Algorithm:
 -Input: A author name S
 -Output: A list of author names who contain S
 
  Steps:
- i. Initialze a list called A which will contain an array with
-
+ i. Initialze a hash table called A and a hash function h() which takes in an author a* and returns a list.  called A which will contain an array with two entries, author name in index 0 and a list of books in index 1. 
+ ii. The matching process will be the same as in problem one. If a match is found, add the name of the book to the index for that author 
 
 3. Given a range of years A to B, print a list of books published between years A and B, inclusive. Books should be printed in order of publication year.
 
+Syntax: python3 getBooks(books, range, sortingMethod)
+- here books is the list of books, range is the selection of books, and sortingMethod is for printing the books out in order of publication year
+
 4. If the user requests a usage statement (via a suitable command-line flag) or if the user's command-line syntax is invalid, print a suitable usage statement.
+Usage: This function displays the usage and syntax of the other command line interface tools when called. If called directly, it will take in one of the other command line functions as an argument and display that given functions usage statment. The other time it is invoked is when the syntax of one of the functions is wrong in which case, it will automatically print the usage and syntax of that given funciton.
+
+Syntax: python3 books.py usage(function)
+-function is the desired function to have the usage and syntax displayed of. 
