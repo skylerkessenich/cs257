@@ -36,9 +36,10 @@ Algorithm:
  ii. The matching process will be the same as in problem one. If a match is found, add the name of the book to the index for that author 
 
 3. Given a range of years A to B, print a list of books published between years A and B, inclusive. Books should be printed in order of publication year.
+Usage: This function will take in two parameters start and finish. This function will return the titles of all books between those two years in sorted order. If no books are in this range nothing will be returned. 
 
-Syntax: python3 getBooks(books, range, sortingMethod)
-- here books is the list of books, range is the selection of books, and sortingMethod is for printing the books out in order of publication year
+Syntax: python3 books.py bookInYears(start, finish):
+-start is the first year and finish is the end year
 
 4. If the user requests a usage statement (via a suitable command-line flag) or if the user's command-line syntax is invalid, print a suitable usage statement.
 Usage: This function displays the usage and syntax of the other command line interface tools when called. If called directly, it will take in one of the other command line functions as an argument and display that given functions usage statment. The other time it is invoked is when the syntax of one of the functions is wrong in which case, it will automatically print the usage and syntax of that given funciton.
