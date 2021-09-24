@@ -1,1 +1,40 @@
-Test
+Skyler Kessenich and Julian Bowers
+
+
+This file contains the CLI designs for the books project
+
+Before doing any of these operations, we are first going to put our books info into a data structure for convientent data access. We are going to put each book into a list and for each book in the list, we will create a sub array with three entries, title, author and year. We will call the parent list B and the sublist Bi where i is a book in B. 
+
+1. Given a search string S, print a list of books whose titles contain S (case-insensitive). Books may be sorted by title or by publication year.
+Usage: This CLI will take in a string name and output a list of potenteial book titles. Unless flagged, this function will be sorted by the title of the book but if flagged, it will be sorted by publication year. 
+
+Syntax: python3 books.py getTitles(books, title, sortingMethod)
+- here books is the list of books, title is the string to be searched for and sortingMethod ius the method with which to sort. 
+
+Algorithm:
+- Input: a String S
+- Outpus: A list of books containing S in the title. 
+
+Steps:
+
+i. Initialize a pointer p to the first character of the substring S and a list that is the titles to be returned called titles.
+ii. For every book i in our data set, we will access Bi[0] aka the title of the book. ii. For ever charater c in Bi[0], if c=p then go to the next character c and incriment p to the next character in S. if c != p then set p to be the first character in S and check again. If there are no more characters in S then add Bi to titles.
+
+
+2. Given a search string S, print a list of authors whose names contain S (case-insensitive). For each such author, print a list of the author's books. Authors should be printed in alphabetical order by surname, breaking ties by using given name (e.g. Ann Brontë comes before Charlotte Brontë).
+Usage: This CLI will allow a user to search to see what books a specffic author has written. Given an authors name it will print out that name followed by every bookn they have written. 
+
+Syntax: python3 books.py getAuthors(books, author)
+-here books is the dataset of books and author is the string S containing the potential author name
+
+Algorithm:
+-Input: A author name S
+-Output: A list of author names who contain S
+
+ Steps:
+ i. Initialze a list called A which will contain an array with
+
+
+3. Given a range of years A to B, print a list of books published between years A and B, inclusive. Books should be printed in order of publication year.
+
+4. If the user requests a usage statement (via a suitable command-line flag) or if the user's command-line syntax is invalid, print a suitable usage statement.
