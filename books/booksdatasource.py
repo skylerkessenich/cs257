@@ -151,16 +151,3 @@ class BooksDataSource:
         return booksReturned
 
 
-def main():
-    tester=BooksDataSource('books1.csv')
-    test1=tester.authors('Brontë')
-    for a in test1:
-        print(a.given_name)
-
-    
-
-
-
-if __name__ == '__main__':
-    main()
-
