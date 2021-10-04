@@ -1,0 +1,54 @@
+Skyler Kessenich and Julian Bowers
+
+
+This file contains the CLI designs for the books project
+
+Before doing any of these operations, we are first going to put our books info into a data structure for convientent data access. We are going to put each book into a list and for each book in the list, we will create a sub array with three entries, title, author and year. We will call the parent list B and the sublist Bi where i is a book in B. 
+
+1. Given a search string S, print a list of books whose titles contain S (case-insensitive). Books may be sorted by title or by publication year.
+Usage: This CLI will take in a string name and output a list of potenteial book titles. If no text provided, the function will return all titles. Unless flagged, this function will be sorted by the title of the book but if flagged, it will be sorted by publication year. 
+
+
+
+Syntax: python3 books.py -t --titles| [-S] <search_text,sorting_method>
+
+Arguments:
+
+search_text: The text to be searched for in titles
+sorting_method: 
+-t: sort by titles
+-y: sort by year
+
+
+
+
+
+2. Given a search string S, print a list of authors whose names contain S (case-insensitive). For each such author, print a list of the author's books. Authors should be printed in alphabetical order by surname, breaking ties by using given name (e.g. Ann Brontë comes before Charlotte Brontë).
+Usage: This CLI will allow a user to search to see what books a specffic author has written. Given an authors name it will print out that name followed by every book they have written. 
+
+Syntax: python3 books.py -a --authors| [-S] <search_text>
+
+Arguments:
+search_text: The text to be searched for in author names
+
+
+3. Given a range of years A to B, print a list of books published between years A and B, inclusive. Books should be printed in order of publication year.
+Usage: This function will take in two parameters start and finish. This function will return the titles of all books between those two years in sorted order. If no books are in this range nothing will be returned. 
+
+Syntax: python3 books.py -b --between | [-s]<start> [-e]<end>
+
+Arguments:
+
+start: start year
+end: end year
+
+-start is the first year and finish is the end year
+
+4. If the user requests a usage statement (via a suitable command-line flag) or if the user's command-line syntax is invalid, print a suitable usage statement.
+Usage: This function displays the usage and syntax of the other command line interface tools when called. If called directly, it will take in one of the other command line functions as an argument and display that given functions usage statment. The other time it is invoked is when the syntax of one of the functions is wrong in which case, it will automatically print the usage and syntax of that given funciton.
+
+Syntax: python3 books.py -u --usage |[-f]<function>
+
+Arguments:
+
+function: is the desired function to have the usage and syntax displayed of. 
