@@ -13,6 +13,7 @@ class Author:
         self.given_name = given_name
         self.birth_year = birth_year
         self.death_year = death_year
+        self.booksWritten = []
 
     def __eq__(self, other):
         ''' For simplicity, we're going to assume that no two authors have the same name. '''
@@ -68,6 +69,8 @@ class BooksDataSource:
                 authorsLocal.append(newAuthor) #adds newAuthor to list of authors for this book
                 counter+=1
             newBook=Book(book[0],int(book[1]),authorsLocal)
+            for a in authorsLocal:
+                a.booksWritten.append(newBook)
             self.booksList.append(newBook)
 
        
@@ -112,7 +115,7 @@ class BooksDataSource:
                 if search_text in book.title.lower():
                     booksReturned.append(book)
         if sort_by=='year':
-            booksReturned.sort(key=lambda x:x.publication_year,reverse=False)
+            booksReturned.sort(key=lambda x:x.publication_year,reverse=False)     
         else:
             booksReturned.sort(key=lambda x:x.title,reverse=False)
         return booksReturned
@@ -132,14 +135,18 @@ class BooksDataSource:
         if start_year==None and end_year==None:
             booksReturned=self.booksList
         elif start_year==None:
+            end_year=int(end_year)
             for book in self.booksList:
                 if book.publication_year<=end_year:
                     booksReturned.append(book)
         elif end_year==None:
+            start_year=int(start_year)
             for book in self.booksList:
                 if book.publication_year>=start_year:
                     booksReturned.append(book)
         else:
+            start_year=int(start_year)
+            end_year=int(end_year)
             for book in self.booksList:
                 if book.publication_year>=start_year and book.publication_year<=end_year:
                     booksReturned.append(book)
