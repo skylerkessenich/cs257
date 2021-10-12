@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 '''
-    booksdatasource.py
-    Julian Bowers Skyler Kessenich Oct 2nd 2021
+    revised booksdatasource.py 
+    Julian Bowers Skyler Kessenich Oct 11th 2021
 '''
 
 import csv
