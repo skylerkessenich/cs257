@@ -8,4 +8,7 @@ SELECT olympics.medal, games.game, events.event, athlete.name FROM olympics, gam
 WHERE olympics.athleteID=71665 AND games.id=olympics.gameID and olympics.eventID=events.id AND athlete.id=71665 AND NOT olympics.medal='NA'
 ORDER BY games.year;
 
-
+SELECT COUNT(olympics.medal='Gold'), team.team FROM olympics, team
+WHERE olympics.nationID=team.id 
+GROUP BY team.team
+ORDER BY COUNT(olympics.medal='Gold') DESC;
