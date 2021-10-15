@@ -59,33 +59,10 @@ def readFile(csvreader):
 
 
 
-		
-
-def createAge():
-	tracker=[]
-	with open('age.csv', mode = 'w') as fileW: #opens age.csv for writing
-		csvwriter=csv.writer(fileW, delimiter=',',quotechar='"', quoting=csv.QUOTE_MINIMAL) #creates a csv writer
-		for i in range(1,101): #we are going to write ages from 1 to 101 for possible ages
-			csvwriter.writerow([i,i]) 
-
-
-def createMedals():
-	with open('medals.csv', mode = 'w') as fileW: #opens games.csv for writing
-		csvwriter=csv.writer(fileW, delimiter=',',quotechar='"', quoting=csv.QUOTE_MINIMAL) #creates a csv writer
-		csvwriter.writerow(['id','medal'])
-		csvwriter.writerow(['1','Bronze'])
-		csvwriter.writerow(['2','Silver'])
-		csvwriter.writerow(['3','Gold'])
-		csvwriter.writerow(['4','NA'])
-
-
-
 def main():
 	file = open('athlete_events.csv')
 	csvreader = csv.reader(file)
 	header=next(csvreader)
-	createAge()
-	createMedals()
 	readFile(csvreader)
 
 	exit()
