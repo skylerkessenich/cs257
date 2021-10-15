@@ -5,10 +5,6 @@ CREATE TABLE athlete (
 	height float,
 	weight float);
 
-CREATE TABLE age (
-	id SERIAL,
-	age integer);
-
 CREATE TABLE team (
 	id SERIAL,
 	team text,
