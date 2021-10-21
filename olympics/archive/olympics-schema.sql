@@ -1,13 +1,11 @@
 CREATE TABLE athlete (
 	id SERIAL,
 	name text,
-	sex text,
-	height float,
-	weight float);
+	sex text);
 
-CREATE TABLE team (
+CREATE TABLE nation (
 	id SERIAL,
-	team text,
+	NOC text,
 	country text);
 
 CREATE TABLE events (
@@ -25,6 +23,8 @@ CREATE TABLE games(
 CREATE TABLE olympics(
 	athleteId SERIAL,
 	age integer,
+	height float,
+	weight float,
 	nationID SERIAL,
 	eventID SERIAL,
 	gameID SERIAL,
