@@ -8,7 +8,7 @@ def parseArgs():
 	parser=argparse.ArgumentParser()
 	parser.add_argument('--athletes','-a',nargs='+',help='lists all the athletes from a specified NOC. Need to input a NOC')
 	parser.add_argument('--leaders','-l',action='store_true',help='lists all NOCs and their gold medals and sorts them in decending order of medals')
-	parser.add_argument('--events','-e',nargs='+',help='lists all the events from a specified sport. Need to input a valid sport')
+	parser.add_argument('--events','-e',nargs='+',help='lists all the events from a specified sport. Need to input a valid sport (i.e. entering Hockey would display Mens and Womens Hockey)')
 
 	return parser
 
@@ -71,7 +71,7 @@ def main():
 		exit()
 	args=parseArgs()
 	parsedArgs=args.parse_args()
-	if parsedArgs.athletes !=None: #runts the athletes from NOC
+	if parsedArgs.athletes !=None: #runs the athletes from NOC
 		if len(parsedArgs.athletes)==1:
 			athletes(parsedArgs.athletes[0],cursor)
 		else:
@@ -83,7 +83,7 @@ def main():
 		else:
 			print('Please input exactly 1 valid Sport')
 			args.print_help()
-	if parsedArgs.leaders: #shows the gold medal leaderboar
+	if parsedArgs.leaders: #shows the gold medal leaderboard
 		leaders(cursor)
 	exit()
 
