@@ -15,4 +15,3 @@ ORDER BY COUNT(olympics.medal='Gold') DESC;
 
 
 
-
