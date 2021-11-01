@@ -23,7 +23,7 @@ def games():
     except Exception as e:
         print(e)
         exit()
-    query='SELECT * FROM games;' #selects all the games data
+    query='SELECT * FROM games ORDER BY games.year ASC;' #selects all the games data
     cursor.execute(query)
     for row in cursor:
         gameDict={'id':row[0],'year':row[2],'season':row[3],'city':row[4]} #puts data into the dictionary
@@ -31,7 +31,7 @@ def games():
     return json.dumps(finalList)
 
 
-@app.route('/NOC')
+@app.route('/nocs')
 def NOC():
     finalList=[]
     try:    #connect to database
